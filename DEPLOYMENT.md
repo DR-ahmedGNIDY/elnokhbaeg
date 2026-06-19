@@ -150,8 +150,8 @@
 ```
 MONGODB_URI=                       # رابط MongoDB (Atlas أو محلي)
 AUTH_SECRET=                       # openssl rand -base64 32
-AUTH_URL=                          # https://your-domain.com
-NEXTAUTH_URL=                      # https://your-domain.com
+AUTH_URL=                          # https://nokhbaeg.com
+NEXTAUTH_URL=                      # https://nokhbaeg.com
 AUTH_TRUST_HOST=true
 AUTH_GOOGLE_ID=                    # Google OAuth Client ID
 AUTH_GOOGLE_SECRET=                # Google OAuth Client Secret
@@ -169,7 +169,7 @@ SEED_ADMIN_EMAIL=
 SEED_ADMIN_PASSWORD=
 ```
 
-> **Google OAuth — Redirect URI:** `https://your-domain.com/api/auth/callback/google`
+> **Google OAuth — Redirect URI:** `https://nokhbaeg.com/api/auth/callback/google`
 > (وللتطوير: `http://localhost:3000/api/auth/callback/google`).
 
 ---
@@ -217,7 +217,7 @@ pm2 logs elite                 # لمتابعة السجلات
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com www.your-domain.com;
+    server_name nokhbaeg.com www.nokhbaeg.com;
 
     client_max_body_size 200M;   # للسماح برفع الفيديوهات الكبيرة
 
@@ -242,10 +242,10 @@ sudo nginx -t && sudo systemctl reload nginx
 ### 4.5 شهادة SSL مجانية (Let’s Encrypt)
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+sudo certbot --nginx -d nokhbaeg.com -d www.nokhbaeg.com
 # التجديد التلقائي مفعّل عبر systemd timer
 ```
-> بعد تفعيل HTTPS اضبط `AUTH_URL` و`NEXTAUTH_URL` على `https://your-domain.com` ثم `pm2 restart elite`.
+> بعد تفعيل HTTPS اضبط `AUTH_URL` و`NEXTAUTH_URL` على `https://nokhbaeg.com` ثم `pm2 restart elite`.
 
 ### 4.6 الجدار الناري
 ```bash
